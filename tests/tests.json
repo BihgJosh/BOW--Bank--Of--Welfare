@@ -1,104 +1,56 @@
 [
   {
-    "name": "Public landing page explains BOW and protects private tools",
+    "name": "Public landing page and contact information render",
     "sanity": true,
     "viewport": "desktop",
     "covers": [
-      "BOW logo displayed in header and hero",
-      "public mission and vision",
-      "how support works",
+      "public BOW landing page",
+      "mission and vision",
       "welfare tiers",
-      "partner opportunities",
-      "NCC and Kagini Help Desk contacts",
-      "admin and management tools hidden from public navigation"
+      "NCC and Kagini help desks",
+      "contact phone number",
+      "contact QR code"
     ],
-    "description": "Verifies a public visitor can understand BOW, find application and partner calls to action, and cannot reach internal tools through public navigation.",
+    "description": "Checks the public information and direct contact routes are visible without an administrator area.",
     "steps": [
       "Open the BOW homepage",
-      "Confirm the BOW logo appears in the header and hero identity panel",
-      "Review the mission, vision, how it works, welfare tiers and Help Desk contact sections",
-      "Inspect the public navigation for internal management links"
+      "Review the mission, vision, how it works and five welfare pathways",
+      "Scroll to the contact section"
     ],
-    "expected": "The public page presents BOW information and clear application and partner calls to action; no admin, dashboard, tracker, upload, or Help Desk management link is shown."
+    "expected": "The public landing page shows BOW information, the phone number 08086001110 and the contact QR image, with no admin or management tools."
   },
   {
-    "name": "Unauthenticated applicant submits a support application",
+    "name": "Applicant form prepares a WhatsApp support request",
     "viewport": "desktop",
     "covers": [
-      "public applicant application",
-      "application validation",
-      "/api/public/apply response",
-      "application inbox creation",
-      "tracker intake"
+      "public applicant form",
+      "required field validation",
+      "WhatsApp handoff"
     ],
-    "description": "Verifies a new applicant can submit without signing in and receive a durable reference connected to the private review workflow.",
+    "description": "Verifies a visitor can complete an application and continue with the prepared details in WhatsApp.",
     "steps": [
-      "Select Apply for Support",
-      "Enter a name, phone, address, Help Desk and reason",
-      "Submit the application"
+      "Open Apply for Support",
+      "Submit the form empty and confirm required fields are enforced",
+      "Complete name, phone, Help Desk, address and support reason",
+      "Submit the completed form"
     ],
-    "expected": "A BOW application reference is shown and the submission is available in the private applicant inbox and tracker."
+    "expected": "The browser opens WhatsApp with the applicant details prepared and explains that the applicant must send the message to deliver it."
   },
   {
-    "name": "Administrator uses the private control room and tracker",
-    "viewport": "desktop",
-    "covers": [
-      "private control room route",
-      "administrator authentication",
-      "offline access refresh scope",
-      "admin session persistence",
-      "searchable tracker",
-      "authoritative workbook import",
-      "128 application records",
-      "128 verification records",
-      "active account promotion"
-    ],
-    "description": "Verifies the authorized administrator can enter through the private route, import the tracker and remain in the control room during refresh.",
-    "steps": [
-      "Open the private control room route with #control-room and sign in with the authorized administrator account",
-      "Open General Tracker",
-      "Select and import the General Registration Verification Tracker workbook",
-      "Search for a known applicant",
-      "Refresh the admin workspace"
-    ],
-    "expected": "Applications and Verification records remain searchable, accepted records with account IDs appear as active accounts, and the authorized administrator remains in the private control room."
-  },
-  {
-    "name": "Applicant and partner inbox responses persist",
-    "viewport": "desktop",
-    "covers": [
-      "applicant inbox",
-      "partner inbox",
-      "response box",
-      "response persistence",
-      "inbox status update"
-    ],
-    "description": "Verifies private staff can review public submissions and persist responses with their workflow status.",
-    "steps": [
-      "Open Applicant & Partner Inbox",
-      "Open a submission",
-      "Write a response and save it",
-      "Refresh the inbox"
-    ],
-    "expected": "The response remains attached to its submission and the record can be marked Responded."
-  },
-  {
-    "name": "Partner applies without signing in on mobile",
+    "name": "Partner form prepares a WhatsApp partnership enquiry on mobile",
     "viewport": "mobile",
     "covers": [
-      "public partner application",
-      "/api/public/partner-apply response",
-      "partner inbox creation",
-      "required-field validation",
-      "mobile application flow"
+      "public partner form",
+      "partner enquiry details",
+      "mobile responsive form"
     ],
-    "description": "Verifies a partner can submit a complete expression of interest without authentication while incomplete submissions are rejected.",
+    "description": "Verifies a partner can prepare an enquiry without a backend or account.",
     "steps": [
-      "Open Partner opportunities",
-      "Leave partner name empty and submit",
-      "Enter partner name and contact",
-      "Submit the partnership application"
+      "Open Partner opportunities on mobile",
+      "Complete partner name and contact",
+      "Choose contribution type and frequency",
+      "Submit the form"
     ],
-    "expected": "An incomplete submission is rejected; a complete partnership application is accepted and routed to the private partner inbox."
+    "expected": "WhatsApp opens with the partner enquiry details and the public page remains usable on mobile."
   }
 ]
